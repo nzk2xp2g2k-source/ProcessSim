@@ -14,6 +14,10 @@ let package = Package(
         .executable(
             name: "process-sim",
             targets: ["ProcessSimCLI"]
+        ),
+        .executable(
+            name: "ProcessSimApp",
+            targets: ["ProcessSimApp"]
         )
     ],
     dependencies: [],
@@ -27,6 +31,11 @@ let package = Package(
             name: "ProcessSimCLI",
             dependencies: ["ProcessSim"],
             path: "Sources/CLI"
+        ),
+        .executableTarget(
+            name: "ProcessSimApp",
+            dependencies: ["ProcessSim"],
+            path: "Sources/ProcessSimApp"
         ),
         .testTarget(
             name: "ProcessSimTests",
